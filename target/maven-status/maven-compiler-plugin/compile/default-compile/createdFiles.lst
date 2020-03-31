@@ -1,0 +1,7 @@
+com/languageschool/project/error/CourseUnSupportedFieldPatchException.class
+com/languageschool/project/error/CourseNotFoundException.class
+com/languageschool/project/model/Course.class
+com/languageschool/project/error/CustomGlobalExceptionHandler.class
+com/languageschool/project/StartLanguageLabApplication.class
+com/languageschool/project/repository/CourseRepository.class
+com/languageschool/project/controller/CourseController.class
