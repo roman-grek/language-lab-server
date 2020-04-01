@@ -12,7 +12,7 @@ import com.languageschool.project.error.CourseNotFoundException;
 
 
 @RestController
-@CrossOrigin(origins = "http://https://language-lab-client.herokuapp.com")
+@CrossOrigin(origins = "https://language-lab-client.herokuapp.com")
 @RequestMapping("/api/v1")
 public class CourseController {
 
