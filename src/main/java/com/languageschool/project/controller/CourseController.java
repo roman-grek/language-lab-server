@@ -12,7 +12,7 @@ import com.languageschool.project.error.CourseNotFoundException;
 
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+//@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("/api/v1")
 public class CourseController {
 
