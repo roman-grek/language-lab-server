@@ -13,12 +13,21 @@ public class Course {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", updatable = false, nullable = false)
-    private Long id;
-    private String name;
-    private String level;
-    private String language;
-    private Integer price;
-    private Integer classesCount;
+    protected Long id;
+    protected String name;
+    protected String level;
+    protected String language;
+    protected Integer price;
+
+    public Integer getClassesCount() {
+        return classesCount;
+    }
+
+    public void setClassesCount(Integer classesCount) {
+        this.classesCount = classesCount;
+    }
+
+    protected Integer classesCount;
 
     protected static Long idGen = 1L;
 
@@ -28,10 +37,10 @@ public class Course {
 
     public Course(String name, String level, String language, Integer price, Integer classesCount) {
         this.name = name;
-        this.classesCount = classesCount;
         this.price = price;
         this.language = language;
         this.level = level;
+        this.classesCount = classesCount;
     }
 
     public long getId() {
@@ -91,11 +100,5 @@ public class Course {
                 '}';
     }
 
-    public Integer getClassesCount() {
-        return classesCount;
-    }
 
-    public void setClassesCount(Integer classesCount) {
-        this.classesCount = classesCount;
-    }
 }

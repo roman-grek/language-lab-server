@@ -1,6 +1,7 @@
 package com.languageschool.project.controller;
 
 import com.languageschool.project.model.Course;
+import com.languageschool.project.model.CourseStandard;
 import com.languageschool.project.repository.CourseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -22,7 +23,7 @@ public class CourseController {
     // find
     @GetMapping("/courses")
     List<Course> findAll() {
-        return (List<Course>) repository.findAll();
+        return repository.findAll();
     }
 
     // save
@@ -49,8 +50,8 @@ public class CourseController {
                     x.setName(newCourse.getName());
                     x.setLanguage(newCourse.getLanguage());
                     x.setLevel(newCourse.getLevel());
-                    x.setPrice(newCourse.getPrice());
                     x.setClassesCount(newCourse.getClassesCount());
+                    x.setPrice(newCourse.getPrice());
                     return repository.save(x);
                 })
                 .orElseGet(() -> {
