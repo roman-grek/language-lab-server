@@ -10,7 +10,6 @@ import java.util.List;
 
 import com.languageschool.project.error.CourseNotFoundException;
 
-import javax.validation.Valid;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
@@ -30,7 +29,7 @@ public class CourseController {
     // return 201 instead of 200
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/courses")
-    Course newCourse(@Valid @RequestBody Course newCourse)
+    Course newCourse(@RequestBody Course newCourse)
     {
         return repository.save(newCourse);
     }
@@ -44,7 +43,7 @@ public class CourseController {
 
     // save or update
     @PutMapping("/courses/{id}")
-    Course saveOrUpdate(@PathVariable Long id, @Valid @RequestBody Course newCourse) {
+    Course saveOrUpdate(@PathVariable Long id, @RequestBody Course newCourse) {
         return repository.findById(id)
                 .map(x -> {
                     x.setName(newCourse.getName());
