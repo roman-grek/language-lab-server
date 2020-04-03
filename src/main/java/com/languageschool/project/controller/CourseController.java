@@ -26,8 +26,7 @@ public class CourseController {
         return repository.findAll();
     }
 
-    // save
-    // return 201 instead of 200
+    // save, return 201 instead of 200
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/courses")
     Course newCourse(@RequestBody Course newCourse)
