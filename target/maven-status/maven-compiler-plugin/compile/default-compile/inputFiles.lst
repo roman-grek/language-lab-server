@@ -16,6 +16,8 @@
 /home/roman/IdeaProjects/SpringBootRestService/src/main/java/com/languageschool/project/repository/UserRepository.java
 /home/roman/IdeaProjects/SpringBootRestService/src/main/java/com/languageschool/project/StartLanguageLabApplication.java
 /home/roman/IdeaProjects/SpringBootRestService/src/main/java/com/languageschool/project/security/WebSecurityConfig.java
+/home/roman/IdeaProjects/SpringBootRestService/src/main/java/com/languageschool/project/repository/GroupRepository.java
+/home/roman/IdeaProjects/SpringBootRestService/src/main/java/com/languageschool/project/model/Group.java
 /home/roman/IdeaProjects/SpringBootRestService/src/main/java/com/languageschool/project/model/ERole.java
 /home/roman/IdeaProjects/SpringBootRestService/src/main/java/com/languageschool/project/payload/response/JwtResponse.java
 /home/roman/IdeaProjects/SpringBootRestService/src/main/java/com/languageschool/project/payload/response/MessageResponse.java

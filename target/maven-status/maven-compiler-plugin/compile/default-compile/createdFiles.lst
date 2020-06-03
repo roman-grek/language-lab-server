@@ -3,6 +3,7 @@ com/languageschool/project/security/jwt/AuthTokenFilter.class
 com/languageschool/project/security/jwt/AuthEntryPointJwt.class
 com/languageschool/project/error/CustomGlobalExceptionHandler.class
 com/languageschool/project/error/UserAlreadyExistsException.class
+com/languageschool/project/model/Group.class
 com/languageschool/project/payload/response/JwtResponse.class
 com/languageschool/project/repository/UserRepository.class
 com/languageschool/project/payload/request/LoginRequest.class
@@ -15,6 +16,7 @@ com/languageschool/project/model/CourseExpress.class
 com/languageschool/project/model/ERole.class
 com/languageschool/project/repository/RoleRepository.class
 com/languageschool/project/model/CourseStandard.class
+com/languageschool/project/repository/GroupRepository.class
 com/languageschool/project/security/services/UserDetailsImpl.class
 com/languageschool/project/model/Role.class
 com/languageschool/project/security/jwt/JwtUtils.class
