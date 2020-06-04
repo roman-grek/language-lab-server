@@ -37,7 +37,14 @@ public class Group {
         this.teacher = teacher;
     }
 
+    protected static Long idGen = 1L;
+
     public Long getId() {
+        if (id == null)
+        {
+            id = idGen;
+            idGen++;
+        }
         return id;
     }
 

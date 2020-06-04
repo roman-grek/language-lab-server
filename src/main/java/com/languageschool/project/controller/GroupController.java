@@ -2,6 +2,7 @@ package com.languageschool.project.controller;
 
 import com.languageschool.project.error.CourseNotFoundException;
 import com.languageschool.project.error.GroupNotFoundException;
+import com.languageschool.project.model.Course;
 import com.languageschool.project.model.Group;
 import com.languageschool.project.model.User;
 import com.languageschool.project.payload.request.CreateGroupRequest;
@@ -38,12 +39,11 @@ public class GroupController {
     {
         Long courseId = groupRequest.getCourseId();
         Long teacherId = groupRequest.getTeacherId();
-        Group newGroup = new Group(
-                courseRepository.findById(courseId)
-                        .orElseThrow(() -> new CourseNotFoundException(courseId)),
-                userRepository.findById(teacherId)
-                        .orElseThrow(() -> new UsernameNotFoundException("teacher"))
-        );
+        Course course = courseRepository.findById(courseId)
+                .orElseThrow(() -> new CourseNotFoundException(courseId));
+        User teacher = userRepository.findById(teacherId)
+                .orElseThrow(() -> new UsernameNotFoundException("teacher"));
+        Group newGroup = new Group(course, teacher);
         return groupRepository.save(newGroup);
     }
 
