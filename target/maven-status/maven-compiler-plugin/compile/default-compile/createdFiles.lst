@@ -1,5 +1,6 @@
 com/languageschool/project/error/GroupNotFoundException.class
 com/languageschool/project/error/CourseNotFoundException.class
+com/languageschool/project/payload/request/JoinGroupRequest.class
 com/languageschool/project/security/jwt/AuthTokenFilter.class
 com/languageschool/project/security/jwt/AuthEntryPointJwt.class
 com/languageschool/project/error/CustomGlobalExceptionHandler.class

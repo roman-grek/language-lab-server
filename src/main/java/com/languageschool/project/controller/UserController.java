@@ -4,6 +4,7 @@ import com.languageschool.project.error.CourseNotFoundException;
 import com.languageschool.project.model.Course;
 import com.languageschool.project.model.Group;
 import com.languageschool.project.model.User;
+import com.languageschool.project.payload.request.JoinGroupRequest;
 import com.languageschool.project.payload.response.MessageResponse;
 import com.languageschool.project.repository.CourseRepository;
 import com.languageschool.project.repository.UserRepository;
@@ -11,6 +12,7 @@ import com.languageschool.project.repository.GroupRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Set;
@@ -46,9 +48,11 @@ public class UserController {
     }
 
     @PostMapping("/join/{id}")
-    ResponseEntity<?> joinCourse(@PathVariable Long id, @RequestBody User user) {
+    ResponseEntity<?> joinCourse(@PathVariable Long id, @RequestBody JoinGroupRequest joinGroupRequest) {
         Course course = courseRepository.findById(id)
                 .orElseThrow(() -> new CourseNotFoundException(id));
+        User user = userRepository.findByUsername(joinGroupRequest.getUserName())
+                .orElseThrow(() -> new UsernameNotFoundException(joinGroupRequest.getUserName()));
         for (Group group: groupRepository.findAll()) {
             if (group.getStudents().contains(user)) {
                 return ResponseEntity

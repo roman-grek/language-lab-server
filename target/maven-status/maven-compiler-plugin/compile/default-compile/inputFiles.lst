@@ -4,6 +4,7 @@
 /home/roman/IdeaProjects/SpringBootRestService/src/main/java/com/languageschool/project/payload/request/SignupRequest.java
 /home/roman/IdeaProjects/SpringBootRestService/src/main/java/com/languageschool/project/controller/CourseController.java
 /home/roman/IdeaProjects/SpringBootRestService/src/main/java/com/languageschool/project/controller/GroupController.java
+/home/roman/IdeaProjects/SpringBootRestService/src/main/java/com/languageschool/project/payload/request/JoinGroupRequest.java
 /home/roman/IdeaProjects/SpringBootRestService/src/main/java/com/languageschool/project/model/Role.java
 /home/roman/IdeaProjects/SpringBootRestService/src/main/java/com/languageschool/project/error/GroupNotFoundException.java
 /home/roman/IdeaProjects/SpringBootRestService/src/main/java/com/languageschool/project/error/UserAlreadyExistsException.java
