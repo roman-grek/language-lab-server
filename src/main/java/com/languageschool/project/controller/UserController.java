@@ -35,6 +35,11 @@ public class UserController {
         return "Добро пожаловать на сайт школы LanguageLab. Чтобы записаться на курс, войдите в аккаунт.";
     }
 
+    @GetMapping("/secret")
+    public String secretContent() {
+        return "Только избранный сможет увидеть этот текст!";
+    }
+
     @GetMapping("/users")
     List<User> findAll() {
         return userRepository.findAll();
@@ -44,9 +49,16 @@ public class UserController {
     ResponseEntity<?> joinCourse(@PathVariable Long id, @RequestBody User user) {
         Course course = courseRepository.findById(id)
                 .orElseThrow(() -> new CourseNotFoundException(id));
+        for (Group group: groupRepository.findAll()) {
+            if (group.getStudents().contains(user)) {
+                return ResponseEntity
+                        .badRequest()
+                        .body(new MessageResponse("Вы уже записаны на курс!"));
+            }
+        }
         for (Group group: groupRepository.findByCourse(course)) {
             Set<User> students = group.getStudents();
-            if (students.size() < 12) {
+            if (students.size() < 6) {
                 students.add(user);
                 group.setStudents(students);
                 return ResponseEntity.ok(new MessageResponse("Успешная запись на курс"));
@@ -59,7 +71,7 @@ public class UserController {
     }
 
     @DeleteMapping("/{id}")
-    void deleteCourse(@PathVariable Long id) {
+    void deleteUser(@PathVariable Long id) {
         userRepository.deleteById(id);
     }
 }

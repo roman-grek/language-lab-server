@@ -2,9 +2,10 @@
 /home/roman/IdeaProjects/SpringBootRestService/src/main/java/com/languageschool/project/model/User.java
 /home/roman/IdeaProjects/SpringBootRestService/src/main/java/com/languageschool/project/error/CustomGlobalExceptionHandler.java
 /home/roman/IdeaProjects/SpringBootRestService/src/main/java/com/languageschool/project/payload/request/SignupRequest.java
-/home/roman/IdeaProjects/SpringBootRestService/src/main/java/com/languageschool/project/controller/AdminController.java
 /home/roman/IdeaProjects/SpringBootRestService/src/main/java/com/languageschool/project/controller/CourseController.java
+/home/roman/IdeaProjects/SpringBootRestService/src/main/java/com/languageschool/project/controller/GroupController.java
 /home/roman/IdeaProjects/SpringBootRestService/src/main/java/com/languageschool/project/model/Role.java
+/home/roman/IdeaProjects/SpringBootRestService/src/main/java/com/languageschool/project/error/GroupNotFoundException.java
 /home/roman/IdeaProjects/SpringBootRestService/src/main/java/com/languageschool/project/error/UserAlreadyExistsException.java
 /home/roman/IdeaProjects/SpringBootRestService/src/main/java/com/languageschool/project/model/CourseStandard.java
 /home/roman/IdeaProjects/SpringBootRestService/src/main/java/com/languageschool/project/error/CourseNotFoundException.java
@@ -20,6 +21,7 @@
 /home/roman/IdeaProjects/SpringBootRestService/src/main/java/com/languageschool/project/model/Group.java
 /home/roman/IdeaProjects/SpringBootRestService/src/main/java/com/languageschool/project/model/ERole.java
 /home/roman/IdeaProjects/SpringBootRestService/src/main/java/com/languageschool/project/payload/response/JwtResponse.java
+/home/roman/IdeaProjects/SpringBootRestService/src/main/java/com/languageschool/project/controller/UserController.java
 /home/roman/IdeaProjects/SpringBootRestService/src/main/java/com/languageschool/project/payload/response/MessageResponse.java
 /home/roman/IdeaProjects/SpringBootRestService/src/main/java/com/languageschool/project/payload/request/LoginRequest.java
 /home/roman/IdeaProjects/SpringBootRestService/src/main/java/com/languageschool/project/security/services/UserDetailsServiceImpl.java
