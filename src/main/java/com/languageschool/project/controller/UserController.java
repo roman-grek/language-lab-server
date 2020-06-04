@@ -65,6 +65,7 @@ public class UserController {
             if (students.size() < 6) {
                 students.add(user);
                 group.setStudents(students);
+		groupRepository.save(group);
                 return ResponseEntity.ok(new MessageResponse("Успешная запись на курс"));
             }
         }
