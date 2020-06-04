@@ -77,6 +77,7 @@ public class GroupController {
             if (students.contains(user)) {
                 students.remove(user);
                 group.setStudents(students);
+		groupRepository.save(group);
                 return ResponseEntity.ok(new MessageResponse("Вы покинули группу"));
             }
         }
