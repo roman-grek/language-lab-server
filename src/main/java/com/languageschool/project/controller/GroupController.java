@@ -72,7 +72,7 @@ public class GroupController {
 
     @PutMapping("/leave/{id}")
     ResponseEntity<?> leaveGroup(@PathVariable Long userId) {
-	User user = userRepository.findById(id)
+	User user = userRepository.findById(userId)
 		.orElseThrow(() -> new UsernameNotFoundException("user"));
         for (Group group: groupRepository.findAll()) {
             Set<User> students = group.getStudents();
