@@ -64,7 +64,8 @@ public class GroupController {
 
     @GetMapping("/teacher/{id}")
     List<Group> teacherGroups(@PathVariable Long id) {
-        User teacher = userRepository.getOne(id);
+        User teacher = userRepository.findById(id)
+		.orElseThrow(() -> new UsernameNotFoundException("teacher"));
         return groupRepository.findByTeacher(teacher);
     }
 
