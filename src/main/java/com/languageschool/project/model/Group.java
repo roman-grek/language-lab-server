@@ -32,8 +32,7 @@ public class Group {
     public Group() {
     }
 
-    public Group(Long id, Course course, User teacher) {
-        this.id = id;
+    public Group(Course course, User teacher) {
         this.course = course;
         this.teacher = teacher;
     }

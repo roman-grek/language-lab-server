@@ -1,14 +1,18 @@
 package com.languageschool.project.controller;
 
+import com.languageschool.project.error.CourseNotFoundException;
 import com.languageschool.project.error.GroupNotFoundException;
 import com.languageschool.project.model.Group;
 import com.languageschool.project.model.User;
+import com.languageschool.project.payload.request.CreateGroupRequest;
 import com.languageschool.project.payload.response.MessageResponse;
+import com.languageschool.project.repository.CourseRepository;
 import com.languageschool.project.repository.GroupRepository;
 import com.languageschool.project.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Set;
@@ -25,10 +29,21 @@ public class GroupController {
     @Autowired
     private UserRepository userRepository;
 
+    @Autowired
+    private CourseRepository courseRepository;
+
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/groups")
-    Group newGroup(@RequestBody Group newGroup)
+    Group newGroup(@RequestBody CreateGroupRequest groupRequest)
     {
+        Long courseId = groupRequest.getCourseId();
+        Long teacherId = groupRequest.getTeacherId();
+        Group newGroup = new Group(
+                courseRepository.findById(courseId)
+                        .orElseThrow(() -> new CourseNotFoundException(courseId)),
+                userRepository.findById(teacherId)
+                        .orElseThrow(() -> new UsernameNotFoundException("teacher"))
+        );
         return groupRepository.save(newGroup);
     }
 
