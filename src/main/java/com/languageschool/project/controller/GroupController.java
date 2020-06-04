@@ -37,12 +37,10 @@ public class GroupController {
     @PostMapping("/groups")
     Group newGroup(@RequestBody CreateGroupRequest groupRequest)
     {
-        Long courseId = groupRequest.getCourseId();
-        Long teacherId = groupRequest.getTeacherId();
-        Course course = courseRepository.findById(courseId)
-                .orElseThrow(() -> new CourseNotFoundException(courseId));
-        User teacher = userRepository.findById(teacherId)
-                .orElseThrow(() -> new UsernameNotFoundException("teacher"));
+        Course course = courseRepository.findByName(groupRequest.getCourseName())
+                .orElseThrow(() -> new CourseNotFoundException(1L));
+        User teacher = userRepository.findByUsername(groupRequest.getTeacherName())
+                .orElseThrow(() -> new UsernameNotFoundException(groupRequest.getTeacherName()));
         Group newGroup = new Group(course, teacher);
         return groupRepository.save(newGroup);
     }

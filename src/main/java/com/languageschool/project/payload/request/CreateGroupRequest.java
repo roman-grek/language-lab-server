@@ -4,24 +4,25 @@ import javax.validation.constraints.*;
 
 public class CreateGroupRequest {
     @NotBlank
-    private Long teacherId;
+    private String teacherName;
 
     @NotBlank
-    private Long courseId;
+    private String courseName;
 
-    public Long getTeacherId() {
-        return teacherId;
+
+    public String getTeacherName() {
+        return teacherName;
     }
 
-    public void setTeacherId(Long teacherId) {
-        this.teacherId = teacherId;
+    public void setTeacherName(String teacherName) {
+        this.teacherName = teacherName;
     }
 
-    public Long getCourseId() {
-        return courseId;
+    public String getCourseName() {
+        return courseName;
     }
 
-    public void setCourseId(Long courseId) {
-        this.courseId = courseId;
+    public void setCourseName(String courseName) {
+        this.courseName = courseName;
     }
 }

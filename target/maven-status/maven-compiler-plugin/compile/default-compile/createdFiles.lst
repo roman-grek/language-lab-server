@@ -21,6 +21,7 @@ com/languageschool/project/model/CourseStandard.class
 com/languageschool/project/repository/GroupRepository.class
 com/languageschool/project/security/services/UserDetailsImpl.class
 com/languageschool/project/model/Role.class
+com/languageschool/project/payload/request/CreateGroupRequest.class
 com/languageschool/project/controller/UserController.class
 com/languageschool/project/security/jwt/JwtUtils.class
 com/languageschool/project/controller/AuthController.class

@@ -29,3 +29,4 @@
 /home/roman/IdeaProjects/SpringBootRestService/src/main/java/com/languageschool/project/repository/CourseRepository.java
 /home/roman/IdeaProjects/SpringBootRestService/src/main/java/com/languageschool/project/security/services/UserDetailsImpl.java
 /home/roman/IdeaProjects/SpringBootRestService/src/main/java/com/languageschool/project/security/jwt/AuthEntryPointJwt.java
+/home/roman/IdeaProjects/SpringBootRestService/src/main/java/com/languageschool/project/payload/request/CreateGroupRequest.java
